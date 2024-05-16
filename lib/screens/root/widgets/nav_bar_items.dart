@@ -26,16 +26,6 @@ List<BottomNavigationBarItem> navBarItems = [
       label: "Favorite"),
   BottomNavigationBarItem(
       icon: SvgPicture.asset(
-        (AppImages.scan),
-      ),
-      activeIcon: SvgPicture.asset(
-        (AppImages.scan),
-        colorFilter:
-            const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
-      ),
-      label: "Scan"),
-  BottomNavigationBarItem(
-      icon: SvgPicture.asset(
         (AppImages.cart),
       ),
       activeIcon: SvgPicture.asset(

@@ -25,9 +25,6 @@ class _RootState extends State<Root> {
     const Center(
       child: Text("Favorite"),
     ),
-    const Center(
-      child: Text("Scan"),
-    ),
     const StoreScreen(),
     const Center(
       child: Text("Profile"),
