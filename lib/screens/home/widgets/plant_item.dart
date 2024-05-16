@@ -31,6 +31,8 @@ class PlantItem extends StatelessWidget {
                   tag: plant.imageUrl,
                   child: Image.asset(
                     plant.imageUrl,
+                    fit: BoxFit.cover,
+                    height: 150,
                   ),
                 ),
               ),
@@ -49,11 +51,11 @@ class PlantItem extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: 40,
           ),
           Text(plant.category, style: greyStyle),
           const SizedBox(
-            height: 5,
+            height: 10,
           ),
           Text(
             plant.title,

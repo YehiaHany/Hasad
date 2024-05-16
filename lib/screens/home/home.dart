@@ -19,6 +19,9 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 15,
+            ),
             const HomeAppBar(),
             const SearchFilter(),
             const PlantCategories(),

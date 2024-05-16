@@ -48,7 +48,7 @@ class Plant {
       ),
       Plant(
         title: 'تفاح',
-        imageUrl: 'assets/images/apple.jpg',
+        imageUrl: 'assets/images/apple.png',
         category: 'فاكهه',
         price: 50,
         rating: 4.2,
@@ -83,7 +83,7 @@ class Plant {
         imageUrl: 'assets/images/cucumber.png',
         category: 'خضراوات',
         price: 25,
-        rating: 4.0,
+        rating: 4.3,
         description:
             'نباتات الخيار بأوراقها الخضراء الكبيرة والمتشابكة والمسننة، وهي نباتات متسلقة تحتاج إلى دعامات لدعم نموها. ينمو الخيار بشكل جيد في التربة الرطبة والجيدة التصريف، ويفضل المناخ الدافئ. يتميز بثماره الطويلة والمدورة التي تتراوح في الألوان بين الأخضر والأصفر، وتكون قابلة للأكل عندما تكون لينة وغير ناضجة، مع زيادة الليونة مع نضجها',
         height: 1.5,
@@ -112,7 +112,7 @@ class Plant {
       ),
       Plant(
         title: 'طماطم',
-        imageUrl: 'assets/images/tomato.jpg',
+        imageUrl: 'assets/images/tomato.png',
         category: 'خضراوات',
         price: 16,
         rating: 4.3,
@@ -127,13 +127,13 @@ class Plant {
         wateringFrequency: 2,
       ),
       Plant(
-          title: 'Yucca',
-          imageUrl: 'assets/images/yucca.png',
-          category: 'Outdoor',
+          title: 'جزر',
+          imageUrl: 'assets/images/carrot.png',
+          category: 'خضراوات',
           price: 29.99,
           rating: 4.6,
           description:
-              'Make a bold statement in your outdoor garden with the Yucca plant. Known for its tall and spiky appearance, this outdoor beauty stands at 4.0 feet with a diameter of 2.0 feet. Priced at \$29.99, the Yucca brings a touch of the wild to your outdoor landscape. While it might not be the most popular, its unique characteristics make it a standout choice for those seeking a distinctive outdoor plant.',
+              'تتميز بثمارها اللامعة ذات اللون البرتقالي المميز والتي تكون عادة مدورة وطويلة الشكل. تعتبر الجزر مصدرًا ممتازًا لفيتامين A، وهي أيضًا غنية بالألياف والبوتاسيوم والفيتامينات الأخرى مثل فيتامين C. كما أنها تحتوي على مواد مضادة للأكسدة وتعتبر جزءًا هامًا من النظام الغذائي الصحي بفضل فوائدها الصحية المتعددة.',
           height: 4.0,
           diameter: 2.0,
           weight: 1.2,
@@ -142,13 +142,13 @@ class Plant {
           isFavorite: false,
           wateringFrequency: 8),
       Plant(
-        title: 'Zamioculcas',
-        imageUrl: 'assets/images/zamioculcas.png',
-        category: 'Houseplant',
+        title: 'بطيخ',
+        imageUrl: 'assets/images/watermelon.png',
+        category: 'فاكهه',
         price: 22.99,
         rating: 4.4,
         description:
-            'Meet the Zamioculcas, also known as the ZZ plant, a low-maintenance indoor companion. Priced at \$22.99, this houseplant stands at 1.5 feet with a diameter of 1.5 feet. With a popularity rating that speaks to its easy care and aesthetic appeal, the Zamioculcas is a favorite among indoor plant enthusiasts. Add a touch of green to your home with this stylish and hassle-free choice.',
+            'يتميز بثماره اللامعة ذات اللون الأخضر الفاتح من الخارج واللون الأحمر الزاهي من الداخل. غالبًا ما يكون له شكل مدور. يعتبر البطيخ مصدرًا ممتازًا لفيتامين C وفيتامين A والبوتاسيوم، بالإضافة إلى احتوائه على مضادات الأكسدة ومواد مضادة للالتهابات ومضادة للسرطان.',
         height: 1.5,
         diameter: 1.5,
         weight: 0.7,

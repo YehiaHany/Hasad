@@ -38,7 +38,7 @@ class StorePlantsList extends StatelessWidget {
       child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) => Container(
-                height: 140,
+                height: 111,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18.0),
@@ -55,13 +55,13 @@ class StorePlantsList extends StatelessWidget {
                         ),
                         Image.asset(
                           plants[index].imageUrl,
-                          width: 80,
+                          width: 150,
                         ),
                       ],
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 12),
+                          vertical: 0, horizontal: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -74,19 +74,19 @@ class StorePlantsList extends StatelessWidget {
                             style: greyStyle,
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 0,
                           ),
                           Row(
                             children: [
                               generateStarRating(plants[index].rating),
                               const SizedBox(
-                                width: 5,
+                                width: 0,
                               ),
                               Text(plants[index].rating.toString())
                             ],
                           ),
                           const SizedBox(
-                            height: 5,
+                            height: 0,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,

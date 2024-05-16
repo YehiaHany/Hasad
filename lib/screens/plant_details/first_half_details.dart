@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:planting_app/screens/plant_details/plant_details_app_bar.dart';
 import 'package:planting_app/utils/styles.dart';
 
@@ -71,11 +73,13 @@ class FirstHalfDetails extends StatelessWidget {
                   ],
                 ),
               ),
-              Hero(
-                  tag: plant.imageUrl,
-                  child: Image.asset(
-                    plant.imageUrl,
-                  ))
+              Expanded(
+                child: Hero(
+                    tag: plant.imageUrl,
+                    child: Image.asset(
+                      plant.imageUrl,
+                    )),
+              )
             ],
           ),
         ),

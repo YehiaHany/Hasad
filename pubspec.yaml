@@ -28,6 +28,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/potatos.png
     - assets/svgs/
   fonts:
     - family: Roboto
