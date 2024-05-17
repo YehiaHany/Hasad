@@ -6,12 +6,12 @@ class Plant {
   final double rating;
   final String description;
   final double height;
-  final double diameter;
+  final String diameter;
   final double weight;
   final String type;
   final bool isPopular;
   final bool isFavorite;
-  int wateringFrequency;
+  String wateringFrequency;
 
   Plant({
     required this.title,
@@ -39,12 +39,12 @@ class Plant {
         description:
             'تتميز الموز بقشره الخارجي الأصفر السميك واللحم الداخلي الأبيض أو الأصفر الذي يكون غنيًا بالمواد الغذائية والطاقة. يحتوي الموز على مجموعة واسعة من الفيتامينات والمعادن، بما في ذلك فيتامين C وفيتامين B6 والبوتاسيوم والمغنيسيوم والفولات.',
         height: 5.0,
-        diameter: 3.0,
+        diameter: 'شتوي',
         weight: 600,
         type: 'كافنديش',
         isPopular: true,
         isFavorite: false,
-        wateringFrequency: 10,
+        wateringFrequency: 'أكوادور',
       ),
       Plant(
         title: 'تفاح',
@@ -55,12 +55,12 @@ class Plant {
         description:
             ' تحتوي التفاح على مجموعة متنوعة من العناصر الغذائية الضرورية، بما في ذلك الألياف والفيتامينات. تُعتبر الألياف في التفاح مفيدة لصحة الجهاز الهضمي وتعزز الشعور بالشبع، بينما تساعد الفيتامينات والمعادن في دعم جهاز المناعة والحفاظ على صحة الجلد والعيون والأنسجة الأخرى في الجسم',
         height: 2.5,
-        diameter: 2.0,
+        diameter: 'خريفي',
         weight: 300,
         type: 'أمريكاني',
         isPopular: false,
         isFavorite: true,
-        wateringFrequency: 12,
+        wateringFrequency: 'أمريكا',
       ),
       Plant(
         title: 'بطاطس',
@@ -71,12 +71,12 @@ class Plant {
         description:
             'نبات البطاطس (سولانوم توبيروسوم) من النباتات العشبية المعمرة  ينتج محاصيل درنية صالحة للأكل تكونت تحت الأرض. وهو عضو في عائلة سولاناسي.  يفضل النبات  التربة الخصبة قليلة الحمضية ، ذات  التصريف الجيد',
         height: 3.0,
-        diameter: 2.5,
+        diameter: 'شتوي',
         weight: 900,
         type: 'روزيتا',
         isPopular: true,
         isFavorite: true,
-        wateringFrequency: 15,
+        wateringFrequency: 'الصين',
       ),
       Plant(
         title: 'خيار',
@@ -87,12 +87,12 @@ class Plant {
         description:
             'نباتات الخيار بأوراقها الخضراء الكبيرة والمتشابكة والمسننة، وهي نباتات متسلقة تحتاج إلى دعامات لدعم نموها. ينمو الخيار بشكل جيد في التربة الرطبة والجيدة التصريف، ويفضل المناخ الدافئ. يتميز بثماره الطويلة والمدورة التي تتراوح في الألوان بين الأخضر والأصفر، وتكون قابلة للأكل عندما تكون لينة وغير ناضجة، مع زيادة الليونة مع نضجها',
         height: 1.5,
-        diameter: 1.0,
+        diameter: 'خريفي',
         weight: 375,
         type: 'حنظلي',
         isPopular: true,
         isFavorite: false,
-        wateringFrequency: 12,
+        wateringFrequency: 'روسيا',
       ),
       Plant(
         title: 'بصل',
@@ -103,12 +103,12 @@ class Plant {
         description:
             'يتميز البصل ببصيلاته الكروية الصغيرة التي تتشكل طبقات على شكل حلقات والتي تُعرف بالقشرة الخارجية، وهي ما يُستهلك من النبات. يتنوع لون البصل بين الأبيض والأحمر والأصفر حسب الصنف والمنطقة الزراعية.',
         height: 6.0,
-        diameter: 4.0,
+        diameter: 'صيفي',
         weight: 600,
         type: 'أحمر',
         isPopular: false,
         isFavorite: true,
-        wateringFrequency: 7,
+        wateringFrequency: 'مصر',
       ),
       Plant(
         title: 'طماطم',
@@ -119,12 +119,12 @@ class Plant {
         description:
             'تتميز الطماطم بثمارها اللامعة ذات اللون الأحمر (وأحيانًا الأصفر أو البرتقالي) والتي يمكن أن تكون مدورة أو بيضاوية الشكل. تعتبر الطماطم مصدرًا ممتازًا لفيتامين C وفيتامين A والبوتاسيوم ومضادات الأكسدة، وتحتوي أيضًا على مواد مضادة للالتهابات ومضادة للسرطان',
         height: 1.0,
-        diameter: 1.0,
+        diameter:'صيفي',
         weight: 800,
         type: 'كريزيه',
         isPopular: true,
         isFavorite: true,
-        wateringFrequency: 2,
+        wateringFrequency: 'الهند',
       ),
       Plant(
           title: 'جزر',
@@ -135,12 +135,12 @@ class Plant {
           description:
               'تتميز بثمارها اللامعة ذات اللون البرتقالي المميز والتي تكون عادة مدورة وطويلة الشكل. تعتبر الجزر مصدرًا ممتازًا لفيتامين A، وهي أيضًا غنية بالألياف والبوتاسيوم والفيتامينات الأخرى مثل فيتامين C. كما أنها تحتوي على مواد مضادة للأكسدة وتعتبر جزءًا هامًا من النظام الغذائي الصحي بفضل فوائدها الصحية المتعددة.',
           height: 4.0,
-          diameter: 2.0,
+          diameter: 'صيفي',
           weight: 1.2,
-          type: 'Outdoor',
+          type: 'جبلي',
           isPopular: false,
           isFavorite: false,
-          wateringFrequency: 8),
+          wateringFrequency: 'الصين'),
       Plant(
         title: 'بطيخ',
         imageUrl: 'assets/images/watermelon.png',
@@ -150,12 +150,12 @@ class Plant {
         description:
             'يتميز بثماره اللامعة ذات اللون الأخضر الفاتح من الخارج واللون الأحمر الزاهي من الداخل. غالبًا ما يكون له شكل مدور. يعتبر البطيخ مصدرًا ممتازًا لفيتامين C وفيتامين A والبوتاسيوم، بالإضافة إلى احتوائه على مضادات الأكسدة ومواد مضادة للالتهابات ومضادة للسرطان.',
         height: 1.5,
-        diameter: 1.5,
+        diameter: 'شتوي',
         weight: 0.7,
-        type: 'Indoor',
+        type: 'شيلين',
         isPopular: true,
         isFavorite: true,
-        wateringFrequency: 18,
+        wateringFrequency: 'أسبانيا',
       ),
     ];
   }

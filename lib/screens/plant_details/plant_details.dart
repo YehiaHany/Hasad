@@ -25,13 +25,13 @@ class PlantDetails extends StatelessWidget {
         ],
       )),
       bottomSheet: Container(
-          height: 100,
+          height: 80,
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
             color: Colors.white,
           ),
           child: Padding(
-            padding: const EdgeInsets.all(25),
+            padding: const EdgeInsets.only(left: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,27 +41,33 @@ class PlantDetails extends StatelessWidget {
                   children: [
                     Text(
                       "السعر",
-                      style: greyStyle,
+                      style: TextStyle(fontSize: 18,color: Colors.grey) ,
+                      
+                      
                     ),
                     Text(
-                      "\$${singlePlant.price.toString()}",
-                      style: priceStyle,
+                      "\ج ${singlePlant.price.toString()}",
+                      style: TextStyle(fontSize: 18,color: Color.fromARGB(255, 25, 25, 35),fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(double.infinity, 80),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    backgroundColor: Theme.of(context).primaryColor,
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: ElevatedButton(
+                    
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(double.infinity, 80),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      backgroundColor: Color.fromARGB(255, 25, 25, 35),
+                    ),
+                    child: const Text(
+                      "دفع",
+                      style: TextStyle(
+                          letterSpacing: 2.0, color: Colors.white, fontSize: 18,fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {},
                   ),
-                  child: const Text(
-                    "دفع",
-                    style: TextStyle(
-                        letterSpacing: 2.0, color: Colors.white, fontSize: 18),
-                  ),
-                  onPressed: () {},
                 )
               ],
             ),

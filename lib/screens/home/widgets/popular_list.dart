@@ -12,13 +12,13 @@ class PopularList extends StatelessWidget {
     final List<Plant> popularPlants =
         plants.where((element) => element.isPopular == true).toList();
     return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 25),
-        height: 110,
+        margin: const EdgeInsets.symmetric(horizontal: 50),
+        height: 160,
         child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) => Container(
-                  padding: const EdgeInsets.all(10),
-                  width: 218,
+                  padding: const EdgeInsets.all(30),
+                  width: 280,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,

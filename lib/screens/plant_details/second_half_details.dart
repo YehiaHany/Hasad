@@ -62,7 +62,7 @@ class SecondHalfDetails extends StatelessWidget {
                       _buildDimensionTile(
                         icon: Icons.width_normal,
                         title: "الموسم",
-                        value: singlePlant.height.toString(),
+                        value: singlePlant.diameter.toString(),
                         context: context,
                       ),
                     ],

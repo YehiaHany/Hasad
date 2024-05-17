@@ -10,9 +10,10 @@ class PlantsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 320,
+      height: 360,
       margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 25),
       child: ListView.separated(
+        
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => GestureDetector(
               onTap: () {

@@ -38,7 +38,8 @@ class StorePlantsList extends StatelessWidget {
       child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) => Container(
-                height: 111,
+                height: 150,
+                width: 150,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18.0),
@@ -100,6 +101,7 @@ class StorePlantsList extends StatelessWidget {
                         ],
                       ),
                     ),
+                    Container(width: 100,),
                     GestureDetector(
                       onTap: () {},
                       child: Container(
