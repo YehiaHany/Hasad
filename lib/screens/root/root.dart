@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planting_app/screens/home/home.dart';
+import 'package:planting_app/screens/profile/profile.dart';
 import 'package:planting_app/screens/root/widgets/nav_bar_items.dart';
 import 'package:planting_app/screens/store/store.dart';
 import 'package:planting_app/utils/app_colors.dart';
@@ -26,9 +27,7 @@ class _RootState extends State<Root> {
       child: Text("Favorite"),
     ),
     const StoreScreen(),
-    const Center(
-      child: Text("Profile"),
-    ),
+    ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {

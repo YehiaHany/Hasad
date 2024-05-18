@@ -1,4 +1,4 @@
 class AppStrings {
-  static const String bigHeadline = "أفضل المحاصيل و بأعلي جوده ";
+  static const String bigHeadline = "اكتشف جودة الطعام معنا ";
   static const String searchPlants = "بحث";
 }

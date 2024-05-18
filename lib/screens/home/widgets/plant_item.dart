@@ -14,16 +14,13 @@ class PlantItem extends StatelessWidget {
       width: 200,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
       ),
       child: Column(
-        
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
-            
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),

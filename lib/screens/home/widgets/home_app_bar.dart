@@ -10,15 +10,19 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 60, left: 25, right: 25),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            AppStrings.bigHeadline,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-          ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              AppStrings.bigHeadline,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 34),
+              textDirection: TextDirection.rtl,
+            ),
 
-        ],
+          ],
+        ),
       ),
     );
   }
