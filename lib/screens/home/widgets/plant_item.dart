@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:planting_app/utils/styles.dart';
 
 import '../../../models/plant.dart';
+import '../../../utils/app_colors.dart';
 import '../../../utils/app_images.dart';
+import '../../sellers/seller.dart';
 
 class PlantItem extends StatelessWidget {
   const PlantItem({super.key, required this.plant});
@@ -79,6 +81,8 @@ class PlantItem extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
+                  final buttonRect = _getButtonRect(context);
+                  _showPopupMenu(context, buttonRect,plant.title);
                   // Handle button press
                 },
                 style: ElevatedButton.styleFrom(
@@ -100,3 +104,101 @@ class PlantItem extends StatelessWidget {
     );
   }
 }
+
+
+void _showPopupMenu(BuildContext context, Rect buttonRect,planttitle) async {
+  final screenSize = MediaQuery.of(context).size;
+  final menuHeight = 200.0; // Assuming the menu has a fixed height of 200
+  final menuPadding = 8.0; // Adjust this value to control the gap
+
+  final menuPosition = Offset(
+    buttonRect.left,
+    buttonRect.bottom - menuHeight - menuPadding,
+  );
+
+  await showMenu(
+    color: Colors.white,
+    context: context,
+    position: RelativeRect.fromLTRB(
+      menuPosition.dx,
+      menuPosition.dy,
+      screenSize.width - buttonRect.right,
+      screenSize.height - buttonRect.bottom - menuHeight,
+    ),
+    items: [
+      PopupMenuItem(
+        enabled: false,
+        child: Container(
+          height: menuHeight,
+          width: double.infinity,
+          child: Scrollbar(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: List.generate(10, (index) {
+                  return ListTile(
+                    title: Text('درجة ${_numberToArabic(index + 1)}'),
+                    onTap: () {
+                      Navigator.pop(context, index + 1);
+                    },
+                  );
+                }),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ],
+    elevation: 8.0,
+  ).then((value) {
+    if (value != null) {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+
+        SnackBar(content: Align(
+            alignment: Alignment.centerRight,
+            child: Text('لقد اخترت درجة ${_numberToArabic(value)}',style: TextStyle(fontSize: 21 ),)),backgroundColor: AppColors.primaryColor,),
+      );
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => SellerListPage(
+            selectedDegree: value,
+            plantTitle: planttitle, // Replace with the actual plant title
+          ),
+        ),
+      );
+    }
+  });
+}
+
+String _numberToArabic(int number) {
+  const List<String> arabicNumbers = [
+    'اولى',
+    'ثانية',
+    'ثالثة',
+    'رابعة',
+    'خامسة',
+    'سادسة',
+    'سابعة',
+    'ثامنة',
+    'تاسعة',
+    'عاشرة',
+  ];
+  return arabicNumbers[number - 1];
+}
+
+
+
+
+Rect _getButtonRect(BuildContext context) {
+  final RenderBox renderBox = context.findRenderObject() as RenderBox;
+  final Offset buttonPosition = renderBox.localToGlobal(Offset.zero);
+  return Rect.fromLTWH(
+    buttonPosition.dx,
+    buttonPosition.dy,
+    renderBox.size.width,
+    renderBox.size.height,
+  );
+}
+

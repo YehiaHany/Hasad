@@ -10,7 +10,7 @@ List<BottomNavigationBarItem> navBarItems = [
     activeIcon: SvgPicture.asset(
       (AppImages.home),
       colorFilter:
-          const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
+          const ColorFilter.mode(Color.fromARGB(255, 118, 227, 194), BlendMode.srcIn),
     ),
     label: "Home",
   ),
@@ -21,7 +21,7 @@ List<BottomNavigationBarItem> navBarItems = [
       activeIcon: SvgPicture.asset(
         (AppImages.favorite),
         colorFilter:
-            const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
+            const ColorFilter.mode(Color.fromARGB(255, 118, 227, 194), BlendMode.srcIn),
       ),
       label: "Favorite"),
   BottomNavigationBarItem(
@@ -31,7 +31,7 @@ List<BottomNavigationBarItem> navBarItems = [
       activeIcon: SvgPicture.asset(
         (AppImages.cart),
         colorFilter:
-            const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
+            const ColorFilter.mode(Color.fromARGB(255, 118, 227, 194), BlendMode.srcIn),
       ),
       label: "Cart"),
   BottomNavigationBarItem(
@@ -41,7 +41,7 @@ List<BottomNavigationBarItem> navBarItems = [
       activeIcon: SvgPicture.asset(
         (AppImages.profile),
         colorFilter:
-            const ColorFilter.mode(AppColors.primaryColor, BlendMode.srcIn),
+            const ColorFilter.mode(Color.fromARGB(255, 118, 227, 194), BlendMode.srcIn),
       ),
       label: "Profile"),
 ];

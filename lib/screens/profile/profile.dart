@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:planting_app/screens/profile/widgets/graph1.dart';
+import 'package:planting_app/screens/profile/widgets/graph2.dart';
 import 'package:planting_app/screens/profile/widgets/infotile.dart';
 import 'package:planting_app/screens/profile/widgets/profileheader.dart';
 import '../../utils/app_colors.dart';
@@ -64,15 +66,25 @@ class _ProfilePageState extends State<ProfilePage> {
                 title: 'الرصيد الحالي',
                 subtitle: 'المبلغ: \$500',
               ),
-              InfoTile(
-                icon: Icons.trending_up,
-                title: 'إحصائيات البيع',
-                subtitle: '...إحصائيات بيعك هنا',
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoScreen2()));
+                },
+                child: InfoTile(
+                  icon: Icons.trending_up,
+                  title: 'إحصائيات البيع',
+                  subtitle: '...إحصائيات بيعك هنا',
+                ),
               ),
-              InfoTile(
-                icon: Icons.trending_down,
-                title: 'إحصائيات الشراء',
-                subtitle: '...إحصائيات شراءك هنا',
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoScreen()));
+                },
+                child: InfoTile(
+                  icon: Icons.trending_down,
+                  title: 'إحصائيات الشراء',
+                  subtitle: '...إحصائيات شراءك هنا',
+                ),
               ),
             ],
           ),
@@ -81,12 +93,3 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
-
-
-
-
-
-
-
-
-

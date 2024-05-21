@@ -7,6 +7,7 @@ import '../../../utils/app_images.dart';
 
 class StorePlantsList extends StatelessWidget {
   StorePlantsList({super.key});
+  
   final List<Plant> plants = Plant.getAllPlants();
   Widget generateStarRating(double rating) {
     rating = rating.clamp(0.0, 5.0);
@@ -33,12 +34,14 @@ class StorePlantsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenheight = MediaQuery.of(context).size.height;
     return Container(
       padding: const EdgeInsets.only(left: 25, right: 25, bottom: 10),
       child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) => Container(
-                height: 111,
+                height: screenheight*0.25,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18.0),
