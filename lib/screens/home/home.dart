@@ -26,17 +26,24 @@ class HomeScreen extends StatelessWidget {
             const SearchFilter(),
             const PlantCategories(),
             PlantsList(),
-            const Padding(
-              padding: EdgeInsets.only(left: 25, bottom: 10)  ,
-              child: Text(
-                "الاكثر مبيعا",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(right: 25, bottom: 10)  ,
+                  child: Text(
+                    textDirection: TextDirection.rtl,
+                    "الاكثر مبيعا",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             PopularList(),
+            SizedBox(height: 15,),
           ],
         ),
       ),

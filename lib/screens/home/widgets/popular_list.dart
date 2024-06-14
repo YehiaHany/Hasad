@@ -19,7 +19,7 @@ class PopularList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Container(
           padding: const EdgeInsets.all(10),
-          width: 218,
+          width: 300,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
@@ -29,8 +29,8 @@ class PopularList extends StatelessWidget {
             children: [
               Image.asset(
                 popularPlants[index].imageUrl,
-                height: 90,
-                width: 90,
+                height: 100,
+                width: 130,
                 fit: BoxFit.cover,
               ),
               const SizedBox(width: 10),

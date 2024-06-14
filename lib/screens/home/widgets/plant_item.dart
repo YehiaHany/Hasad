@@ -13,7 +13,7 @@ class PlantItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: 500,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -80,23 +80,24 @@ class PlantItem extends StatelessWidget {
                 ],
               ),
               ElevatedButton(
-                onPressed: () {
-                  final buttonRect = _getButtonRect(context);
-                  _showPopupMenu(context, buttonRect,plant.title);
-                  // Handle button press
-                },
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(40, 40), // Adjust the size as needed
-                  shape: const CircleBorder(),
-                  backgroundColor: Color.fromARGB(255, 118, 227, 194),
-                ),
-                child: const Center(
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white, // Set the icon color
-                  ),
-                ),
-              )
+  onPressed: () {
+    final buttonRect = _getButtonRect(context);
+    _showPopupMenu(context, buttonRect, plant.title);
+    // Handle button press
+  },
+  style: ElevatedButton.styleFrom(
+    fixedSize: const Size(40, 40), // Adjust the size as needed
+    shape: const CircleBorder(),
+    backgroundColor: Color.fromARGB(255, 118, 227, 194),
+    padding: EdgeInsets.all(0), // Ensure no extra padding
+  ),
+  child: const Icon(
+    Icons.add,
+    color: Colors.white, // Set the icon color
+    size: 24, // Adjust the size of the icon if needed
+  ),
+)
+
             ],
           )
         ],
@@ -157,7 +158,7 @@ void _showPopupMenu(BuildContext context, Rect buttonRect,planttitle) async {
 
         SnackBar(content: Align(
             alignment: Alignment.centerRight,
-            child: Text('لقد اخترت درجة ${_numberToArabic(value)}',style: TextStyle(fontSize: 21 ),)),backgroundColor: AppColors.primaryColor,),
+            child: Text('لقد اخترت درجة ${_numberToArabic(value)}',style: TextStyle(fontSize: 21 ),)),backgroundColor: Color.fromARGB(255, 118, 227, 194),),
       );
       Navigator.push(
         context,

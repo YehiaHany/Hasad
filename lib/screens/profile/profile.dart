@@ -5,7 +5,9 @@ import 'package:planting_app/screens/profile/widgets/graph1.dart';
 import 'package:planting_app/screens/profile/widgets/graph2.dart';
 import 'package:planting_app/screens/profile/widgets/infotile.dart';
 import 'package:planting_app/screens/profile/widgets/profileheader.dart';
+import 'package:planting_app/screens/root/login.dart';
 import '../../utils/app_colors.dart';
+import '../root/root.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -33,6 +35,10 @@ class _ProfilePageState extends State<ProfilePage> {
           IconButton(
             icon: Icon(Icons.logout, color: AppColors.primaryColor),
             onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
               // Add your logout functionality here
             },
           ),

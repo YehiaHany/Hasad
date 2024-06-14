@@ -3,8 +3,6 @@ import 'package:planting_app/models/plant.dart';
 import 'package:planting_app/screens/plant_details/first_half_details.dart';
 import 'package:planting_app/screens/plant_details/second_half_details.dart';
 
-import '../../utils/styles.dart';
-
 class PlantDetails extends StatelessWidget {
   const PlantDetails({super.key, required this.singlePlant});
   final Plant singlePlant;
@@ -13,6 +11,7 @@ class PlantDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -56,7 +56,7 @@ class ProfileHeader extends StatelessWidget {
           SizedBox(height: 16),
           Center(
             child: Text(
-              'سهيل وليد',
+              'اسر وليد',
               style: TextStyle(
                 fontSize: 33,
                 fontWeight: FontWeight.bold,

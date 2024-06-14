@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:planting_app/screens/home/home.dart';
+import 'package:planting_app/screens/root/root.dart';
 
 class AddYourDishesHome extends StatefulWidget {
   const AddYourDishesHome({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
   File? _image;
   String? _selectedItem;
   final List<String> _dropdownItems = ["شتوي", "خريفي", "صيفي", "ربيعي"];
-
+  
   Future<void> _pickImage() async {
     final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
@@ -27,6 +28,8 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: double.infinity,
       padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
@@ -37,6 +40,7 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                SizedBox(height: 40,),
                 Padding(
                   padding: const EdgeInsets.only(right: 22),
                   child: Text(
@@ -46,6 +50,7 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
                 ),
               ],
             ),
+            SizedBox(height: 20,),
             ClipOval(
               child: Container(
                 width: 240, // Width and height of the circle
@@ -64,7 +69,7 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
             SizedBox(height: 20),
             buildTextInputField(label: "النوع"),
             SizedBox(height: 20),
-            buildText(label: "الموسم",size:20.0),
+            buildText(label: "الموسم", size: 20.0),
             SizedBox(height: 8),
             buildDropdownField(),
             SizedBox(height: 20),
@@ -77,16 +82,18 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
                 style: TextStyle(color: Colors.white, fontSize: 18), // Increased font size
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor:Color.fromARGB(255, 32, 33, 32) ,
+                backgroundColor: Color.fromARGB(255, 32, 33, 32),
                 padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15), // Increased button size
               ),
             ),
             SizedBox(height: 35),
             GestureDetector(
               onTap: () async {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return HomeScreen();
-                }));
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                              Root()  ));
               },
               child: Container(
                 height: 50,
@@ -150,7 +157,6 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
                 ),
               ),
               style: TextStyle(color: const Color.fromARGB(255, 32, 33, 32)), // Dark text
-
             ),
           ),
         ),
@@ -158,18 +164,20 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
     );
   }
 
-  Widget buildText({required String label,required double size}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 450),
-          child: Text(
-            label,
-            style: TextStyle(color: Color.fromARGB(255, 18, 29, 26), fontSize: size, fontWeight: FontWeight.bold),
+  Widget buildText({required String label, required double size}) {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 22),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: Color.fromARGB(255, 18, 29, 26),
+            fontSize: size,
+            fontWeight: FontWeight.bold,
           ),
         ),
-      ],
+      ),
     );
   }
 
@@ -209,8 +217,9 @@ class _AddYourDishesHomeState extends State<AddYourDishesHome> {
             });
           },
           hint: Text(
+            textDirection: TextDirection.rtl,
             "اختر عنصر",
-            style: TextStyle(color: Color.fromARGB(255, 32, 33, 32)),
+            style: TextStyle(color: Color.fromARGB(255, 32, 33, 32),),
           ),
         ),
       ),

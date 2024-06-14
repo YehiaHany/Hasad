@@ -7,8 +7,10 @@ import '../../../utils/app_images.dart';
 
 class StorePlantsList extends StatelessWidget {
   StorePlantsList({super.key});
-  
+
+
   final List<Plant> plants = Plant.getAllPlants();
+
   Widget generateStarRating(double rating) {
     rating = rating.clamp(0.0, 5.0);
 
@@ -18,8 +20,8 @@ class StorePlantsList extends StatelessWidget {
     List<Widget> starWidgets = [];
 
     for (int i = 0; i < fullStars; i++) {
-      starWidgets
-          .add(const Icon(Icons.star, size: 16, color: AppColors.primaryColor));
+      starWidgets.add(
+          const Icon(Icons.star, size: 16, color: AppColors.primaryColor));
     }
 
     if (remaining > 0) {
@@ -34,97 +36,114 @@ class StorePlantsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenheight = MediaQuery.of(context).size.height;
-    return Container(
-      padding: const EdgeInsets.only(left: 25, right: 25, bottom: 10),
-      child: ListView.separated(
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (context, index) => Container(
-                height: screenheight*0.25,
+    final screenHeight = MediaQuery.of(context).size.height;
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.only(left: 25, right: 25, bottom: 10),
+        child: Column(
+          children: [
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) => Container(
+                height: screenHeight * 0.25,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18.0),
-                    color: Colors.white),
+                  borderRadius: BorderRadius.circular(18.0),
+                  color: Colors.white,
+                ),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(AppImages.background),
+                    Expanded(
+                      flex: 2,
+                      child: SizedBox(
+                        width: 150,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(
+                                AppImages.background,
+                                width: 150,
+                                height: screenHeight * 0.25,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Image.asset(
+                              plants[index].imageUrl,
+                              width: 150,
+                              height: screenHeight * 0.25,
+                              fit: BoxFit.contain,
+                            ),
+                          ],
                         ),
-                        Image.asset(
-                          plants[index].imageUrl,
-                          width: 150,
-                        ),
-                      ],
+                      ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 0, horizontal: 10),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      flex: 3,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             plants[index].title,
                             style: titleStyle,
+                            overflow: TextOverflow.ellipsis,
                           ),
                           Text(
                             plants[index].category,
                             style: greyStyle,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(
-                            height: 0,
-                          ),
+                          const SizedBox(height: 5),
                           Row(
                             children: [
                               generateStarRating(plants[index].rating),
-                              const SizedBox(
-                                width: 0,
-                              ),
-                              Text(plants[index].rating.toString())
+                              const SizedBox(width: 5),
+                              Text(plants[index].rating.toString()),
                             ],
                           ),
-                          const SizedBox(
-                            height: 0,
-                          ),
+                          const Spacer(),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 "\ج ${plants[index].price.toString()}",
                                 style: priceStyle,
+                              ),
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  height: 30,
+                                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: AppColors.primaryColor,
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      "شراء",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
                         ],
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        height: 30,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: AppColors.primaryColor),
-                        child: const Center(
-                            child: Text(
-                          "شراء",
-                          style: TextStyle(color: Colors.white),
-                        )),
-                      ),
-                    )
                   ],
                 ),
               ),
-          separatorBuilder: (_, index) => const SizedBox(
-                height: 12,
-              ),
-          itemCount: plants.length),
+              separatorBuilder: (_, index) => const SizedBox(height: 12),
+              itemCount: plants.length,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
